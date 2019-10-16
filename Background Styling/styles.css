@@ -1,0 +1,25 @@
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+.header-paragraph {
+    padding: 20px;
+    background: url('https://image.flaticon.com/icons/svg/1946/1946460.svg') no-repeat 95% center,
+                linear-gradient(90deg, #0061fc, #f7f8fa);
+    background-size: 45px 45px, 100%;
+}
+/*  */
+/* linear-gradient(90deg, #468bfa, #01245c) */
+
+.general-text {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: url('https://image.flaticon.com/icons/svg/126/126501.svg') no-repeat 98% 98%,
+                linear-gradient(180deg, rgb(15, 104, 247, 0.9), rgba(255,255,255, 0) 15%),
+                linear-gradient(15deg, rgba(250, 111, 252, 0.7), rgba(255,255,255, 0.4) 20%),
+                linear-gradient(345deg, #03dbfc, rgba(255,255,255) 20%);
+    background-size: 95px 95px, 100%, 100%, 100%;
+    border-top: 5px solid rgb(0, 0, 0);
+}

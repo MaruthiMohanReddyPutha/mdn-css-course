@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Tooltip Hover</title>
+        <style>
+            .container {
+                height: auto;
+                width: 300px;
+                margin: 50px auto;
+                position: relative;
+            }
+
+            .hover-me {
+                height: 50px;
+                width: 200px;
+                margin: 0 auto;
+                line-height: 50px;
+                display: inline-block;
+                background-color: #a60000;
+                color: #ffffff;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 25px;
+
+                /* Box shadow */
+                box-shadow: 3px 3px 5px rgba(119, 2, 2, 0.6),
+                            3px 3px 5px rgba(250, 180, 180, 0.6),
+                            inset 3px 3px 5px rgba(250, 180, 180, 0.6);
+                            /*0px 0px 6px 3px rgba(119, 2, 2, 0.4)*/
+            }
+
+            .tooltip {
+                position: absolute;
+                top: 130%;
+                left: -5%;
+                width: 200px;
+                opacity: 0;
+
+                /* Style the tooltip */
+                font-size: 14px;
+                font-family: sans-serif;
+                background-color: black;
+                border-radius: 5px;
+                padding: 15px;
+                color: white;
+                transition: opacity 0.5s ease-in-out,
+                            z-index 0.5s ease-in-out;
+
+                /* Box shadow */
+                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6),
+                            0px 0px 6px rgba(0, 0, 0, 0.8);
+            }
+
+            .tooltip::after {
+                content: "";
+                position: absolute;
+                top: -16px;
+                left: 45%;
+                border-width: 8px;
+                border-style: solid;
+                border-color: transparent transparent black transparent;
+
+                /* Box Shadow */
+                /*box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8)*/
+            }
+
+            .hover-me:hover + .tooltip {
+                opacity: 1;
+                z-index: 2;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="hover-me">
+                Hover over me!
+            </div>
+            <div class="tooltip">
+                This is the tooltip!
+                Maruthi Mohan Reddy Putha
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+            </div>
+        </div>
+        <div class="container">
+            <div class="hover-me">
+                Hover over me! 2
+            </div>
+            <div class="tooltip">
+                This is the tooltip 2!
+                Maruthi Mohan Reddy Putha
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+                This is a cool thing to do
+            </div>
+        </div>
+    </body>
+    <script>
+
+    </script>
+</html>

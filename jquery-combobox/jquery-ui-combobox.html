@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Combobox</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                crossorigin="anonymous">
+        </script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+                integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+                crossorigin="anonymous">
+        </script>
+        <style>
+            .custom-combobox {
+                position: relative;
+                display: inline-block;
+            }
+            .custom-combobox-toggle {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin-left: -1px;
+                padding: 0;
+            }
+            .custom-combobox-input {
+                margin: 0;
+                padding: 5px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="combobox-container">
+            <div class="created-combobox">
+
+            </div>
+        </div>
+    </body>
+    <script>
+        $.widget( "custom.progressbar", {
+            options: {
+                value: 0
+            },
+            _create: function() {
+                this.options.value = this._constrain(this.options.value);
+                this.element.addClass( "progressbar" );
+                this.refresh();
+            },
+            _setOption: function( key, value ) {
+                if ( key === "value" ) {
+                    value = this._constrain( value );
+                }
+                this._super( key, value );
+            },
+            _setOptions: function( options ) {
+                this._super( options );
+                this.refresh();
+            },
+            refresh: function() {
+                var progress = this.options.value + "%";
+                this.element.text( progress );
+                if ( this.options.value == 100 ) {
+                    this._trigger( "complete", null, { value: 100, text: 'This is awesome plugin!!' } );
+                }
+            },
+            _constrain: function( value ) {
+                if ( value > 100 ) {
+                    value = 100;
+                }
+                if ( value < 0 ) {
+                    value = 0;
+                }
+                return value;
+            }
+        });
+
+        var bar = $( "<div></div>" )
+        .appendTo( "body" )
+        .progressbar({
+            complete: function( event, data ) {
+                alert( "Callbacks are great!" );
+            }
+        })
+        .bind( "progressbarcomplete", function( event, data ) {
+            alert( "Events bubble and support many handlers for extreme flexibility." );
+            alert( "The progress bar value is " + data.value );
+            alert('Event custom text data in the Alert: '+data.text);
+        });
+ 
+        bar.progressbar( "option", "value", 100 );
+
+        var bar = $( "<div></div>" )
+            .appendTo( "body" )
+            .progressbar()
+            .data( "custom-progressbar" );
+        
+        // Call a method directly on the plugin instance.
+        bar.option( "value", 50 );
+        
+        // Access properties on the plugin instance.
+        alert( bar.options.value ); 
+    </script>
+</html>

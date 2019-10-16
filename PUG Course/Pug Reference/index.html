@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <title>PugJS Reference by Maruthi</title>
+  </head>
+  <body>
+    <div>
+      <!-- 
+      ATTRIBUTE REFERENCE IN HTML
+      This section teaches about how to add html attributes to the code
+      -->
+      <h2 class="attributes">Attributes</h2><a href="https://www.google.com">Google</a><br><a class="google-link" href="https://www.google.com" target="_blank">Google</a><br><a class="google-link" href="https://www.google.com">Google</a>
+      <!-- If the attribute names contain unwanted characters, include it in quotes-->
+      <div class="div-class" (click)="play()">(click)</div>
+      <!-- 
+      ATTRIBUTE INTERPOLATION
+      1. can use simple JS expressions
+      2. use Template Strings if the JS runtime supports ES5
+      --><br><br><a href="https://pugjs.org" target="_blank">Go to PugJS</a><br><a href="https://pugjs.org" target="_blank">Go to PugJS</a>
+      <!--  UNESCAPED ATTRIBUTES
+      -->
+      <div unescaped="&lt;code&gt;">Unescaped</div>
+      <!-- Boolean ATTRIBUTES
+      -->
+      <input type="checkbox" checked>
+      <input type="checkbox" checked>
+      <input type="checkbox">
+      <input type="checkbox" checked="checked">
+      <!-- STYLE ATTRIBUTES
+      --><a style="color:red;background:white;">Style Attributes</a><br/>
+      <!-- 
+      This section is used for three types of ATTRIBUTES
+      CLASS ATTRIBUTES, CLASS LITERAL, ID LITERAL
+      -->
+      <div class="foo bar bug">Classes Array</div>
+      
+      <div class="bing foo bar bug bong">Classes Repeated</div>
+      
+      <!-- Angular style class assignment based on the boolean conditions -->
+      <div class="bing active"></div>
+      <!--  CLASS LITERALS
+      -->
+      <div class="button">Button using class literal</div>
+      <div class="content">Default DIV with class literal</div>
+      <!--  ID LITERAL
+      --><a id="main-link">Main link using ID Literal</a>
+      <div id="content">Default DIV using ID Literal</div>
+      <!-- AND ATTRIBUTES &attributes
+      -->
+      <div id="link" foo-bar="baz" foo-baz="bar"></div>
+      <div class="beautiful" id="link-object" foo-bar="baz"></div>
+    </div>
+    <!--  
+    CASE STATEMENT
+    This statement is similar to the Switch statement in the Java
+    -->
+    <div>
+      <!-- Case statement heading-->
+      <h2>Case Statement</h2>
+      <h4>Case Statement Example:</h4>
+      <p>You have 10 friends.</p>
+      <h4>Case Statement Block Expansion</h4>
+      <p>you have a friend</p>
+    </div>
+    <!--  
+    CODE
+    Pug allows us to write the inline JS code.
+    There are three types of the code that is allowed.
+    1. Unbuffered
+    2. Buffered
+    3. Unescaped buffered code
+    
+    -->
+    <!-- 
+    UNBUFFERED CODE
+    Doesn't add anything to the output
+    Just used for the iteration
+    -->
+    <div>
+      <h2>Javascript Code</h2>
+      <div>
+        <h4>Unbuffered Code</h4>
+        <p>
+           This code doesn't add anything to the output
+          It is helpful in repeating the elements on the page
+        </p>
+        <!-- Unbuffered code-->
+        <ul>
+          <li>item-0</li>
+          <li>item-1</li>
+          <li>item-2</li>
+        </ul>
+        <h4>Buffered Code</h4>
+        <p>
+            This code adds something to the layout as it evaluates a JS expression
+          The JS code is first HTML escaped
+          Starts with '='
+        </p>
+        <!-- Buffered Code-->
+        <p>This evaluates the JS Expression &lt;code&gt;
+        </p>
+        <h4>Unescaped Buffered Code</h4>
+        <p>
+          This code starts '!=' and evaluates the JS Expression
+          This code is not HTML Escaped and so it is unsafe for the user
+        </p>
+        <!-- Unescaped Buffered Code-->
+        <p>This code is <strong>escaped code</strong>
+        </p>
+      </div>
+    </div>
+    <!-- 
+    CONDITIONALS
+    Pug allows us to write the conditions in the HTML Templates
+    
+    -->
+    <!--
+    It allows if...else.. also it allows if....else if.....else..... 
+    
+    -->
+    <div>
+      <h2>Conditionals</h2>
+      <p>
+          We can use conditionals based on the JavScript object defined.</p>
+      <p>Not Authorized</p>
+      <p>This user is not authorized and doesn't put some description.</p>
+      <p>
+         This user is NOT Authorized for using the application.
+        You should logout if you do not like.
+      </p>
+    </div>
+    <!--
+    INTERPOLATION
+    Pug provides operators for variety of your interpolative needs
+    
+    -->
+    <!--  Interpolation
+    -->
+    <div>
+      <h2>Interpolation</h2>
+      <p>
+          Pug provides variety of operators for your interpolative needs.</p>
+      <h4>String Interpolation, Escaped</h4>
+      <p>String interpolation that is used for the template local variables</p>
+      <p>Here are the username and password details.</p>
+      <p>This is the username testuser@pug.com &nbsp;
+        And this is the password for it testuserpassword
+      </p>
+      <div>  <em>RUN UNTIL YOU GOAL HAS BEEN ACHEIVED</em></div>
+      <div class="quote">
+        <p>Joel: <em>This text has not been escaped.</em></p>
+      </div>
+      <!--  
+      TAG INTERPOLATION
+      Tag Interpolation is used to write the HTML tags inline
+      
+      -->
+      <h4>Tag Interpolation</h4>
+      <p>Tag Interpolation is a tool useful for whitespace control as well.</p>
+      <p>
+        This paragraph denotes the use of the Tag Interpolation.
+        <em>This is an emphasized text</em>. And the text would be
+        there to be there as <strong>bold text</strong>.
+        
+      </p>
+    </div>
+    <!--
+    ITERATION
+    Pug supports two methods of iteration:
+        1. each
+        2. while
+    -->
+    <div>
+      <h2>Iteration</h2>
+      <p>Pug supports two methods of iteration: <strong>each</strong> and <strong>while</strong>.</p>
+      <h4>each iteration</h4>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+      <ul>
+        <li>0 : cat
+        </li>
+        <li>1 : tiger
+        </li>
+        <li>2 : lion
+        </li>
+      </ul>
+      <ul> 
+        <li>0 : John => 1</li>
+      </ul>
+      <p>Unordered List does not contain any values in the list.</p>
+      <ul>
+        <li>No items present in the list</li>
+      </ul>
+      <p>No items present in the values array and an alternate is provided.</p>
+      <ul>
+        <li>cat</li>
+        <li>tiger</li>
+        <li>lion</li>
+        <li>jaguar</li>
+      </ul>
+      <p>Using <strong>for</strong> as an alias for <strong>each</strong></p>
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ul>
+      <p>Using a <strong>While</strong> loop</p>
+      <ul>
+        <li class="while-li-0">0
+          <div data-item="div-li-1"></div>
+        </li>
+        <li class="while-li-1">1
+          <div data-item="div-li-2"></div>
+        </li>
+        <li class="while-li-2">2
+          <div data-item="div-li-3"></div>
+        </li>
+        <li class="while-li-3">3
+          <div data-item="div-li-4"></div>
+        </li>
+      </ul>
+    </div>
+    <!--
+    MIXINS
+    Mixins allow us to create reusable blocks of Pug
+    -->
+    <div>
+      <h2>Mixins</h2>
+      <p>Mixins allow us to create reusable blocks of Pug code</p>
+      <h4>Declaration without any arguments</h4>
+      <!-- USAGE-->
+            <ul>
+              <li>foo</li>
+              <li>bar</li>
+              <li>bax</li>
+            </ul>
+      <h4>Declaration with Arguments</h4>
+      <ul>
+              <li class="pet">Doggie</li>
+      </ul>
+      <h4>Mixin Blocks</h4>
+            <div class="article">
+              <div class="article-wrapper">
+                <h4>Mixing Blocks</h4>
+                <p>This is</p>
+                <p>My awesome provided block.</p>
+              </div>
+            </div>
+      <h4>Mixin Attributes</h4><a class="btn" href="/foo">foo</a>
+      <h4>Mixin with Default Argument's values</h4>
+      <!-- -Use-->
+            <div class="article">
+              <div class="article-wrapper">
+                <p> Intern's Default Project</p>
+              </div>
+            </div>
+            <div class="article">
+              <div class="article-wrapper">
+                <p> Explicitly setting the heading</p>
+              </div>
+            </div>
+      <h4>Mixin rest of the Attibutes</h4>
+            <ul id="my-list">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+    </div>
+  </body>
+</html>
