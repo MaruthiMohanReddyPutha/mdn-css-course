@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'cantarellregular';
+    src: url('fonts/cantarell-regular-webfont.woff2') format('woff2'),
+         url('fonts/cantarell-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'chunkfiveroman';
+    src: url('fonts/chunkfive-webfont.woff2') format('woff2'),
+         url('fonts/chunkfive-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    display: block;
+    padding: 10px;
+    width: 150px;
+    margin: 10px auto;
+    /* Font related */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:link {
+    text-decoration: none;
+    outline: none;
+    background-color: #a1d6e2;
+    color: #1995AD;
+}
+
+a:visited {
+    font-style: italic;
+    text-decoration: underline;
+    background-color: #a1d6ee;
+    color: #1995AD;
+}
+
+a:focus {
+    background-color: #1995AD;
+    color: #a1d6e2;
+    border-bottom: 2px solid #a1d6e2;
+}
+
+a:hover {
+    background-color: lightgreen;
+    color: green;
+    border-bottom: 2px solid green;
+}
+
+a:active {
+    color: lightgreen;
+    border-bottom: 2px solid lightgreen;
+    background-color: green;
+}
+
+/* a[href] {
+    background: url('https://img.icons8.com/material-rounded/24/000000/link.png') no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+} */

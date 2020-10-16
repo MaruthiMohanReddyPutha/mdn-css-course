@@ -1,0 +1,74 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+body {
+  margin: 0;
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+.top-header {
+  position: absolute;
+  top: 0px;
+  line-height: 50px;
+  width: 100%;
+  text-align: center;
+  background: #004ba0;
+  color: #fff;
+  box-shadow: 0px 2px 4px rgba(25, 118, 210, 0.6);
+  font-size: 16px;
+}
+
+.container {
+  margin: 10px 10px;
+  position: relative;
+  top: 75px;
+}
+.container .header {
+  position: relative;
+  line-height: 50px;
+  width: 100%;
+  color: #000000;
+  font-size: 16px;
+}
+.container.mixins ul {
+  display: inline-block;
+}
+.container.mixins ul:nth-child(2n) {
+  margin: 15px 15px;
+  padding: 0;
+  list-style: none;
+}
+.container.mixins ul:nth-child(2n) li {
+  width: 200px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  transition: background 0.25s ease-in-out, color 0.1s ease-in-out;
+  background: #1976d2;
+}
+.container.mixins ul:nth-child(2n) li:hover {
+  color: #fff;
+  background: #004ba0;
+  cursor: pointer;
+}
+.container.mixins ul:nth-child(2n+1) {
+  margin: 15px 15px;
+  padding: 0;
+  list-style: none;
+}
+.container.mixins ul:nth-child(2n+1) li {
+  width: 200px;
+  color: #000000;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  transition: background 0.25s ease-in-out, color 0.1s ease-in-out;
+  background: #ef5350;
+}
+.container.mixins ul:nth-child(2n+1) li:hover {
+  color: #fff;
+  background: #b61827;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */

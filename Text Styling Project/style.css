@@ -1,0 +1,173 @@
+/* General setup */
+
+@font-face {
+  /* Sans-serif font */
+  font-family: 'amaranthregular'; 
+  src: url('fonts/amaranth-regular-webfont.woff2') format('woff2'),
+       url('fonts/amaranth-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  /* Serif font */
+  font-family: 'aliceregular';
+  src: url('fonts/alice-regular-webfont.woff2') format('woff2'),
+       url('fonts/alice-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+body {
+  font-family: aliceregular;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  word-spacing: 3px;
+}
+
+h1, h2 {
+  font-family: amaranthregular;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+p, ul, ol {
+  font-size: 1.6em;
+  line-height: 1.6em;
+}
+
+ul, ol {
+  margin: 0.8em 0;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: upper-roman;
+}
+
+header {
+  text-align: center;
+}
+
+/* Text Indentation for the first paragraph after each heading in the <section> */
+section > h2+p {
+  text-indent: 40px;
+}
+
+/* Style links */
+a {
+  outline: none;
+}
+
+aside a:link, section a:link {
+  color: #a66;
+}
+
+aside a:visited, section a:visited {
+  color: #a66;
+}
+
+aside a:focus, section a:focus {
+  text-decoration: none;
+}
+
+aside a:hover, section a:hover {
+  text-decoration: none;
+}
+
+aside a:active, section a:active {
+  background-color: #a66;
+  color: white;
+  padding: 2px 22px 2px 4px;
+}
+
+section a {
+    background: url('https://mdn.mozillademos.org/files/12982/external-link-52.png') no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+}
+
+/* Style the Navigation Bar to make the list items as buttons */
+nav ul {
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav ul>li {
+  /* text-align: center; */
+  margin: 10px;
+  height: 4em;
+  border: 1px solid #a66;
+}
+
+nav ul a {
+  display: inline-block;
+  width: 100%;
+  line-height: 4em;
+  text-decoration: none;
+  outline: none;
+  color: #a66;
+  text-align: center;
+}
+
+nav ul a:hover {
+  background-color: #a66;
+  color: white;
+}

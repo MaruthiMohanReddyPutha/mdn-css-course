@@ -1,0 +1,108 @@
+@mixin google-font($family) {
+    @import url("http://fonts.googleapis.com/css?family=#{$family}");
+}
+
+$global-font-family: 'Roboto';
+$primary-color-map : (
+    'primary' : #1976d2,
+    'primary-light' : #63a4ff,
+    'primary-dark' : #004ba0,
+    'primary-font' : #fff,
+    'primary-dark-font' : #fff
+);
+
+$primary-color-map-2 : (
+    'primary' : #ef5350,
+    'primary-light' : #ff867c,
+    'primary-dark' : #b61827,
+    'primary-font' : #000000,
+    'primary-dark-font' : #fff
+);
+
+
+@include google-font($global-font-family);
+
+@mixin remove-defaults {
+    margin: 15px 15px;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin stylish-list($color-map) {
+    @include remove-defaults();
+
+    li {
+        // height: 50px;
+        width: 200px;
+        color: map-get($map: $color-map, $key: 'primary-font');
+        line-height: 50px;
+        text-align: center;
+        font-size: 14px;
+        transition: background 0.25s ease-in-out,
+                    color 0.1s ease-in-out;
+        background: map-get($map: $color-map, $key: 'primary');
+
+        &:hover {
+            color: map-get($map: $color-map, $key: 'primary-dark-font');
+            background: map-get($map: $color-map, $key: 'primary-dark');
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin header($height) {
+    position: absolute;
+    top: 0px;
+    line-height: $height;
+    width: 100%;
+    text-align: center;
+    background: map-get($map: $primary-color-map, $key: 'primary-dark');
+    color: map-get($map: $primary-color-map, $key: 'primary-dark-font');
+    box-shadow: 0px 2px 4px rgba($color: map-get($map: $primary-color-map, $key: 'primary'), $alpha: 0.6);
+    font: {
+        size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    font: {
+        family: $global-font-family;
+        weight: 400;
+    }
+}
+
+.top-header {
+    @include header(50px);
+}
+
+
+.container {
+    margin: 10px 10px;
+    position: relative;
+    top: 75px;
+
+    .header {
+        position: relative;
+        line-height: 50px;
+        width: 100%;
+        color: #000000;
+        font: {
+            size: 16px;
+        }
+    }
+    
+    &.mixins {
+        ul {
+            display: inline-block;
+        }
+    
+        ul:nth-child(2n) {
+            @include stylish-list($primary-color-map);
+        }
+    
+        ul:nth-child(2n+1) {
+            @include stylish-list($primary-color-map-2);
+        }
+    }
+}
